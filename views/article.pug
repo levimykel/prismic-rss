@@ -1,0 +1,15 @@
+extends ./layout.pug
+
+block body
+  div(style="padding: 50px;")
+
+    h1(style="font-weight: bold;") Title
+    != PrismicDOM.RichText.asHtml(document.data.title, ctx.linkResolver)
+    br
+
+    h2(style="font-weight: bold;") Description
+    != PrismicDOM.RichText.asHtml(document.data.description, ctx.linkResolver)
+    br
+
+    h2(style="font-weight: bold;") Content
+    != PrismicDOM.RichText.asHtml(document.data.content, ctx.linkResolver)
