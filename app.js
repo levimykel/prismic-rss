@@ -112,7 +112,7 @@ app.get('/feed', (req, res, next) => {
           title: PrismicDOM.RichText.asText(document.data.title),
           description: PrismicDOM.RichText.asText(document.data.description),
           url: 'http://example.com/article4?this&that', // link to the item
-          date: 'May 27, 2012', // any format that js Date can parse.
+          date: document.last_publication_date, // any format that js Date can parse.
           custom_elements: [
             { 'content:encoded': PrismicDOM.RichText.asHtml(document.data.content, PrismicConfig.linkResolver) },
           ],
